@@ -1,0 +1,171 @@
+.App {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/*LEFTcOLOR*/
+.zeroLeftColor{
+  background-color: #cbf1e3;
+}
+.oneLeftColor{
+  background-color: #fef6bb;
+}
+.oneRightColor{
+  background-color: #fef6bb;
+}
+.twoLeftColor{
+  background-color: #fcc182;
+}
+.threeLeftColor{
+  background-color: #f15d73;
+}
+.fourLeftColor{
+  background-color: #f8dbd1;
+}
+
+.zeroRightColor{
+  background-color: #ade0d2;
+}
+/*RIGHTcOLOR*/
+.oneRightColor{
+  background-color: #faf1b1;
+}
+.twoRightColor{
+  background-color: #f7b46d;
+}
+.threeRightColor{
+  background-color: #f54c65;
+}
+.fourRightColor{
+  background-color: #ecc2b2;
+}
+
+
+
+
+
+
+.rounde {
+  position: relative;
+  height: 26px;
+  width: 26px;
+  list-style-type: none;
+  border-radius: 50%;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2), 0 2px 13px 0 rgba(0, 0, 0, 0.19);
+}
+.r:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3), 0 6px 13px 0 rgba(0, 0, 0, 0.2);
+}
+.space {
+  margin-left: 19px;
+}
+
+.leftSide,
+.rightSide {
+  height: 50vh;
+  width: 100%;
+}
+
+.lista {
+  display: flex;
+  position: fixed;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  top: 47%;
+  left: 32%;
+}
+
+.titolo {
+  position: fixed;
+  top:0%;
+  left: 42%;
+}
+
+.titoloImg {
+  position: fixed;
+  width: 16%;
+  height: 12%;
+  border-radius: 48%;
+  border: 0.5px solid rgb(233, 141, 2);
+}
+
+.buttonClicked {
+  position: relative;
+  height: 36px !important;
+  width: 36px !important;
+  top:-10%;
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+  .leftSide,
+  .rightSide {
+    height: 100vh;
+  }
+
+  .lista {
+    display: block !important;
+    top: 33% !important; /*COSA CI DEVO METTERE?? NON STA AL CENTRO!*/
+    left: 49.05% !important;
+  }
+  
+  .titolo {
+    position: fixed;
+  }
+  .titoloImg {
+    width: 16%;
+    height: 16%;
+  }
+
+  .space {
+    margin-bottom: 19px;
+    margin-left: 0px;
+  }
+  .buttonClicked {
+    position: block !important;
+    left:-12%;
+  }
+}
