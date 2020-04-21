@@ -27,8 +27,9 @@ class LeftRightSize extends Component {
               backgroundColor: `${this.props.backColor}`,
               opacity: "0.8",
             }}
+            key={this.props.backColor}
             className={
-              "rightSide d-flex justify-content-center align-items-center "
+              "animated rightSide d-flex justify-content-center align-items-center "
             }
           >
             <h1>rightSize</h1>

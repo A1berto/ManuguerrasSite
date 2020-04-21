@@ -46,6 +46,9 @@
 #left{
   animation-name: slideInUp;
 }
+#right{
+  animation-name: slideInDown;
+}
 
 
 
