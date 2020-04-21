@@ -43,43 +43,9 @@
 
 
 
-/*LEFTcOLOR*/
-.zeroLeftColor{
-  background-color: #cbf1e3;
+#left{
+  animation-name: slideInUp;
 }
-.oneLeftColor{
-  background-color: #fef6bb;
-}
-.oneRightColor{
-  background-color: #fef6bb;
-}
-.twoLeftColor{
-  background-color: #fcc182;
-}
-.threeLeftColor{
-  background-color: #f15d73;
-}
-.fourLeftColor{
-  background-color: #f8dbd1;
-}
-
-.zeroRightColor{
-  background-color: #ade0d2;
-}
-/*RIGHTcOLOR*/
-.oneRightColor{
-  background-color: #faf1b1;
-}
-.twoRightColor{
-  background-color: #f7b46d;
-}
-.threeRightColor{
-  background-color: #f54c65;
-}
-.fourRightColor{
-  background-color: #ecc2b2;
-}
-
 
 
 
@@ -115,6 +81,7 @@
   top: 47%;
   left: 32%;
 }
+
 
 .titolo {
   position: fixed;

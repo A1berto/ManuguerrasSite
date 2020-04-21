@@ -4,9 +4,6 @@ import "../App.css";
 class CentralButton extends Component {
   constructor(props) {
     super(props);
-    this.state={
-      activeButton: this.props.activeButton
-    }
   }
 
   render() {
@@ -20,8 +17,9 @@ class CentralButton extends Component {
               ? "space rounde r buttonClicked "
               : "space rounde r"
           }
-          onClick={(e) => this.props.handleClick(e)}
+          onClick={(e) => this.props.handleBtnClick(e)}
         ></li>
+        
       </div>
     );
   }

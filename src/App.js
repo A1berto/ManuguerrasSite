@@ -9,28 +9,32 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeButtons: [false, false, false, false, false],
-      numActBtn: null,
-      photos: [
+      currentId: null,
+      buttons: [
         {
-          number: 0,
+          id: 0,
           url: "http://lorempixel.com/400/200",
+          buttonColor: "#b2d8ca",
         },
         {
-          number: 1,
+          id: 1,
           url: "http://lorempixel.com/400/200",
+          buttonColor: "#fef6bb",
         },
         {
-          number: 2,
+          id: 2,
           url: "http://lorempixel.com/400/200",
+          buttonColor: "#fcc182",
         },
         {
-          number: 3,
+          id: 3,
           url: "http://lorempixel.com/400/200",
+          buttonColor: "#f15d73",
         },
         {
-          number: 4,
+          id: 4,
           url: "http://lorempixel.com/400/200",
+          buttonColor: "#f8dbd1",
         },
       ],
     };
@@ -38,75 +42,45 @@ class App extends Component {
 
   btnClicked = (e) => {
     e.preventDefault();
-    this.setState(
-      (prevState) => ({
-        numActBtn: null,
-        activeButtons: prevState.activeButtons.map((val) => {
-          if (1 === 1) {
-            return false;
-          }
-          return false;
-        }),
-      }),
-      () => {
-        console.log("Resetto tutto");
-      }
-    );
-
-    let number = parseInt(e.target.id);
+    const buttonClicked = parseInt(e.target.id);
     this.setState(
       {
-        numActBtn: number,
+        currentId: buttonClicked,
       },
       () => {
         console.log(
-          " setState " +
-            number +
-            "  " +
-            "ho settato il numero del bottone cliccato: " +
-            this.state.numActBtn
+          "E' stato cliccato il bottone con id: " +
+            this.state.currentId +
+            " " +
+            buttonClicked
         );
       }
     );
-    this.setState(
-      (prevState) => ({
-        activeButtons: prevState.activeButtons.map((val, index) => {
-          if (index === number) {
-            return !val;
-          }
-          return val;
-        }),
-      }),
-      () => {
-        console.log(
-          " setState " + number + "  " + this.state.activeButtons[number]
-        );
-      }
-    );
-    let arra = this.state.activeButtons.map((val) => val);
-    console.log("arra with all values: " + arra);
+  };
+
+  getCurrentBackgroundColor = () => {
+    const currentButton = this.state.buttons.find((button) => {
+      return button.id === this.state.currentId;
+    });
+    console.log(currentButton);
+
+    return currentButton === undefined ? "" : currentButton.buttonColor;
   };
 
   render() {
     return (
       <div className="App">
-        {Array.isArray(this.state.photos)
-          ? this.state.photos.map((photo) =>
-              photo.number === this.state.numActBtn &&
-              this.state.numActBtn !== null ? (
-                <LeftRight
-                  activeButton={this.state.numActBtn}
-                  url={photo.url}
-                />
-              ) : (
-                ""
-              )
-            )
-          : ""}
-        <ListCenButs
-          activeButtons={this.state.activeButtons}
-          cliccato={(e) => this.btnClicked(e)}
+        <LeftRight
+          backColor={this.getCurrentBackgroundColor()}
+          currentId={this.state.currentId}
         />
+
+        <ListCenButs
+          buttonSelected={this.state.currentId}
+          buttons={this.state.buttons}
+          handleClick={(e) => this.btnClicked(e)}
+        />
+
         <Logo />
       </div>
     );
@@ -114,3 +88,9 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+()=>this.getCurrentBackgroundColor()
+diverso da  this.getCurrentBackgroundColor()
+ma uguale a this.getCurrentBackgroundColor  (perchè ho fatto il bind)
+ */
