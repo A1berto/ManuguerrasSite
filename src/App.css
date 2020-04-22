@@ -43,16 +43,22 @@
 
 
 
-#left{
+#left {
   animation-name: slideInUp;
 }
-#right{
+#right {
   animation-name: slideInDown;
+  display: block !important;
 }
 
-
-
-
+.rightParag {
+  position: relative;
+  width: 600px;
+  top: 30%;
+  left: 8%;
+  right: 5%;
+  overflow: hidden;
+}
 
 .rounde {
   position: relative;
@@ -85,30 +91,25 @@
   left: 32%;
 }
 
-
 .titolo {
   position: fixed;
-  top:0%;
+  top: 0%;
   left: 42%;
 }
 
 .titoloImg {
   position: fixed;
-  width: 16%;
+  width: 17%;
   height: 12%;
-  border-radius: 48%;
-  border: 0.5px solid rgb(233, 141, 2);
+  top:2%;
 }
 
 .buttonClicked {
   position: relative;
   height: 36px !important;
   width: 36px !important;
-  top:-10%;
+  top: -10%;
 }
-
-
-
 
 @media screen and (min-width: 768px) {
   .leftSide,
@@ -121,7 +122,7 @@
     top: 33% !important; /*COSA CI DEVO METTERE?? NON STA AL CENTRO!*/
     left: 49.05% !important;
   }
-  
+
   .titolo {
     position: fixed;
   }
@@ -136,6 +137,6 @@
   }
   .buttonClicked {
     position: block !important;
-    left:-12%;
+    left: -12%;
   }
 }

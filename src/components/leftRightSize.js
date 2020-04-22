@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import foto from "./alberto.JPG";
+import RightParag from "./RightParag";
 
 class LeftRightSize extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div className="row no-gutters">
@@ -17,9 +14,11 @@ class LeftRightSize extends Component {
               "animated leftSide d-flex justify-content-center align-items-center "
             }
           >
-            <h1>leftSize</h1>
+            <img src={this.props.image }/>
+            <p>{" QUESTO NON FUNZIONA. RITORNA L'URL MA PER VEDERLO SUL DISPLAY NON VA"}</p>
           </div>
         </div>
+
         <div className="col-md-6 no-gutters">
           <div
             id="right"
@@ -32,7 +31,7 @@ class LeftRightSize extends Component {
               "animated rightSide d-flex justify-content-center align-items-center "
             }
           >
-            <h1>rightSize</h1>
+            <RightParag title={this.props.title} parag={this.props.parag} />
           </div>
         </div>
       </div>
