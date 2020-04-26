@@ -140,3 +140,14 @@
     left: -12%;
   }
 }
+
+
+.ss{
+  position:fixed;
+  top:2%;
+  left:2%;
+}
+.imma{
+  height: 60vh;
+  width: 200vh;
+}

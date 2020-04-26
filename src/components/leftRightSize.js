@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import RightParag from "./RightParag";
 
+import Vivande from "../images/pietanze.jpg";
+import Eventi from "../images/eventi.png";
+import Nonni from "../images/nonni.jpg";
+import Famiglia from "../images/famiglia.jpg";
+import Idee from "../images/idee.png";
 class LeftRightSize extends Component {
   render() {
     return (
@@ -14,8 +19,12 @@ class LeftRightSize extends Component {
               "animated leftSide d-flex justify-content-center align-items-center "
             }
           >
-            <img src={this.props.image }/>
-            <p>{" QUESTO NON FUNZIONA. RITORNA L'URL MA PER VEDERLO SUL DISPLAY NON VA"}</p>
+            <img src={this.props.image} />
+            <p>
+              {
+                " QUESTO NON FUNZIONA. RITORNA L'URL MA PER VEDERLO SUL DISPLAY NON VA"
+              }
+            </p>
           </div>
         </div>
 
@@ -31,7 +40,12 @@ class LeftRightSize extends Component {
               "animated rightSide d-flex justify-content-center align-items-center "
             }
           >
-            <RightParag title={this.props.title} parag={this.props.parag} />
+            <RightParag
+              title={this.props.title}
+              parag={this.props.parag}
+              buttons={this.props.buttons}
+              currentId={this.props.currentId}
+            />
           </div>
         </div>
       </div>

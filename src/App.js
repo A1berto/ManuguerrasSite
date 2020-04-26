@@ -1,9 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Cards from "./components/Cards";
+
 import LeftRight from "./components/leftRightSize";
 import Logo from "./components/logo";
 import ListCenButs from "./components/listCenButs";
+
+import Famiglia from "./images/famiglia.jpg";
+import Nonni from "./images/nonni.jpg";
+import Eventi from "./images/eventi.png";
+import Vivande from "./images/pietanze.jpg";
+import Idee from "./images/idee.png";
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +23,7 @@ class App extends Component {
       buttons: [
         {
           id: 0,
-          url: "./famiglia.jpg",
+          url: { Famiglia },
           buttonColor: "#b2d8ca",
           paragTitle: "Famiglia",
           paragPreview:
@@ -21,7 +31,7 @@ class App extends Component {
         },
         {
           id: 1,
-          url: "./nonni.jpg",
+          url: { Nonni },
           buttonColor: "#fef6bb",
           paragTitle: " Nonni ",
           paragPreview:
@@ -29,7 +39,7 @@ class App extends Component {
         },
         {
           id: 2,
-          url: "./eventi.jpg",
+          url: { Eventi },
           buttonColor: "#fcc182",
           paragTitle: "Eventi",
           paragPreview:
@@ -37,7 +47,7 @@ class App extends Component {
         },
         {
           id: 3,
-          url: "./pietanze.jpg",
+          url: { Vivande },
           buttonColor: "#f15d73",
           paragTitle: "Pietanze",
           paragPreview:
@@ -45,10 +55,11 @@ class App extends Component {
         },
         {
           id: 4,
-          url: "./idee.png",
+          url: { Idee },
           buttonColor: "#f8dbd1",
           paragTitle: "Proponi",
-          paragPreview: " Idee per migliorare il sito o per fare cose insieme",
+          paragPreview:
+            " Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.",
         },
       ],
     };
@@ -101,24 +112,17 @@ class App extends Component {
 
     return currentButton === undefined ? "" : currentButton.paragPreview;
   };
-  getOggetto =()=>{
-    const currentButton = this.state.buttons.find((button) => {
-      return button.id === this.state.currentId;
-    });
 
-    return currentButton === undefined ? "" : currentButton;
-  }
-
-  render() {
+  Home = () => {
     return (
-      <div className="App">
+      <div>
         <LeftRight
           backColor={this.getCurrentBackgroundColor()}
           image={this.getCurrentImage()}
-          currentId={this.state.currentId}
           title={this.getCurrentTitle()}
           parag={this.getCurrentParag()}
-          oggetto={this.getOggetto()}
+          currentId={this.state.currentId}
+          buttons={this.state.buttons}
         />
 
         <ListCenButs
@@ -129,6 +133,27 @@ class App extends Component {
 
         <Logo />
       </div>
+    );
+  };
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/" exact component={this.Home} />
+            <Route
+              path="/Pietanze"
+              component={() => (
+                <Cards
+                  currentId={this.state.currentId}
+                  buttons={this.state.buttons}
+                />
+              )}
+            />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class RightParag extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
+    
     return (
       <div className="rightParag ">
-        <h1 className="riquadro">{this.props.title}</h1>
+        <Link to="/Pietanze" sections={this.props.buttons} currentId={this.props.currentId}>
+          <h1 className="riquadro">{this.props.title}</h1>
+        </Link>
         <p>{this.props.parag}</p>
       </div>
     );
