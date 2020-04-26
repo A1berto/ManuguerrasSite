@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 
 import Cards from "./components/Cards";
 
@@ -19,11 +19,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentId: "",
+      currentId: 0,
       buttons: [
         {
           id: 0,
-          url: { Famiglia },
+          url: Famiglia, // basta che lo assegni cosi! questo path verrà cambiato in fase di build! "./images/idee.png";
           buttonColor: "#b2d8ca",
           paragTitle: "Famiglia",
           paragPreview:
@@ -31,7 +31,7 @@ class App extends Component {
         },
         {
           id: 1,
-          url: { Nonni },
+          url: Nonni,
           buttonColor: "#fef6bb",
           paragTitle: " Nonni ",
           paragPreview:
@@ -39,7 +39,7 @@ class App extends Component {
         },
         {
           id: 2,
-          url: { Eventi },
+          url:Eventi ,
           buttonColor: "#fcc182",
           paragTitle: "Eventi",
           paragPreview:
@@ -47,7 +47,7 @@ class App extends Component {
         },
         {
           id: 3,
-          url: { Vivande },
+          url:  Vivande ,
           buttonColor: "#f15d73",
           paragTitle: "Pietanze",
           paragPreview:
@@ -55,7 +55,7 @@ class App extends Component {
         },
         {
           id: 4,
-          url: { Idee },
+          url:  Idee ,
           buttonColor: "#f8dbd1",
           paragTitle: "Proponi",
           paragPreview:
@@ -88,7 +88,8 @@ class App extends Component {
       return button.id === this.state.currentId;
     });
 
-    return currentButton === undefined ? "" : currentButton.buttonColor;
+    // default color #4f4f4f
+    return currentButton === undefined ? "#4f4f4f" : currentButton.buttonColor;
   };
 
   getCurrentImage = () => {
@@ -141,9 +142,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            <Route path="/" exact component={this.Home} />
+            <Route path="/home" exact component={this.Home} />
             <Route
-              path="/Pietanze"
+              path="/pietanze"
               component={() => (
                 <Cards
                   currentId={this.state.currentId}
@@ -151,6 +152,8 @@ class App extends Component {
                 />
               )}
             />
+            {/*REDIRECT AUTOMATICO*/}
+            <Redirect to="/home"/>
           </Switch>
         </div>
       </Router>
