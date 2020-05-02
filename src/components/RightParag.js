@@ -7,7 +7,7 @@ class RightParag extends Component {
     
     return (
       <div className="rightParag ">
-        <Link to="/Pietanze" sections={this.props.buttons} currentId={this.props.currentId}>
+        <Link to="/Approfondisci" sections={this.props.buttons} currentId={this.props.currentId}>
           <h1 className="riquadro">{this.props.title}</h1>
         </Link>
         <p>{this.props.parag}</p>

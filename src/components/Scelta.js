@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Card from "./Card";
 import AltaVisione from "./AltaVisione";
 
-class Cards extends Component {
+
+class Scelta extends Component {
   render() {
     
     return (
@@ -10,10 +11,12 @@ class Cards extends Component {
         <AltaVisione sections={this.props.sections} currentId={this.props.currentId}
         />
 
-        <Card />
+        
       </div>
     );
   }
 }
 
-export default Cards;
+export default Scelta;
+
+//inserire card

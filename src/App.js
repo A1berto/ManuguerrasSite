@@ -3,7 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 
-import Cards from "./components/Cards";
+import Scelta from "./components/Scelta";
 
 import LeftRight from "./components/leftRightSize";
 import Logo from "./components/logo";
@@ -144,9 +144,9 @@ class App extends Component {
           <Switch>
             <Route path="/home" exact component={this.Home} />
             <Route
-              path="/pietanze"
+              path="/approfondisci"
               component={() => (
-                <Cards
+                <Scelta
                   currentId={this.state.currentId}
                   buttons={this.state.buttons}
                 />
