@@ -3,13 +3,18 @@ import { Slide } from "react-slideshow-image";
 
 import "../Slide.css";
 
-import Famiglia from "../images/famiglia.jpg";
-import Eventi from "../images/eventi.png";
-import Vivande from "../images/pietanze.jpg";
-import Nonni from "../images/nonni.jpg";
-
 class AltaVisione extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+    }
+  }
+
   render() {
+    let arr = this.props.sections;
+    let modified = arr.splice(0, this.props.currentId);
+    arr.push(...modified);
+
     const properties = {
       duration: 99999999999999999,
       transitionDuration: 700,
@@ -21,11 +26,23 @@ class AltaVisione extends Component {
     return (
       <div className="containerSlide">
         <Slide {...properties}>
-          <div className="each-slide">
-            <div>
-              <img src={Eventi} alt="img1" />
+          {arr.map((e) => (
+            <div className="each-slide">
+              <div>
+                <img src={e.url} alt="img1" />
+              </div>
             </div>
-          </div>
+          ))}
+        </Slide>
+      </div>
+    );
+  }
+}
+
+export default AltaVisione;
+
+/*
+
           <div className="each-slide">
             <div>
               <img src={Famiglia} alt="img2" />
@@ -41,10 +58,5 @@ class AltaVisione extends Component {
               <img src={Nonni} alt="img4" />
             </div>
           </div>
-        </Slide>
-      </div>
-    );
-  }
-}
 
-export default AltaVisione;
+*/
