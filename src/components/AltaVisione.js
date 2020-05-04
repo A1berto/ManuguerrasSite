@@ -1,42 +1,44 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Slide } from "react-slideshow-image";
+import Filtro from "./Filtro";
 
 import "../Slide.css";
 
-class AltaVisione extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-    }
-  }
+function AltaVisione(props) {
 
-  render() {
-    let arr = this.props.sections;
-    let modified = arr.splice(0, this.props.currentId);
-    arr.push(...modified);
+  let arr = props.sections;
+  let modified = arr.splice(0, props.currentId);
+  arr.push(...modified);
 
-    const properties = {
-      duration: 99999999999999999,
-      transitionDuration: 700,
-      infinite: true,
-      indicators: true,
-      arrows: true,
-    };
+  const properties = {
+    duration: 99999999999999999,
+    transitionDuration: 700,
+    infinite: true,
+    indicators: true,
+    arrows: true,
+  };
 
-    return (
-      <div className="containerSlide">
-        <Slide {...properties}>
-          {arr.map((e) => (
-            <div className="each-slide">
-              <div>
-                <img src={e.url} alt="img1" />
-              </div>
+  const handleFilters = (filters, category) => {
+    console.log(filters);
+    //TODO  query per modificare la richiesta della card
+  };
+
+  return (
+    <div className="containerSlide">
+      <Slide {...properties}>
+        {arr.map((e) => (
+          <div className="each-slide">
+            <div>
+              <img src={e.url} alt="img1" />
             </div>
-          ))}
-        </Slide>
-      </div>
-    );
-  }
+          </div>
+        ))}
+      </Slide>
+
+      <Filtro handleFilters={(filters) => handleFilters(filters, "options")} />
+
+    </div>
+  );
 }
 
 export default AltaVisione;
