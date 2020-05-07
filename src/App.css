@@ -54,9 +54,8 @@
 .rightParag {
   position: relative;
   width: 600px;
-  top: 30%;
-  left: 8%;
-  right: 5%;
+  top: 10%;
+  left: 10%;
   overflow: hidden;
 }
 
@@ -75,11 +74,26 @@
   margin-left: 19px;
 }
 
+
+/*LEFTRIGHT CLASS*/
 .leftSide,
 .rightSide {
   height: 50vh;
   width: 100%;
 }
+.imgProp{
+  width:60% ;
+  height:80%;
+  border-radius: 2%;
+}
+
+
+
+
+.titoloPar{
+  color: black;
+}
+
 
 .lista {
   display: flex;
@@ -91,18 +105,6 @@
   left: 32%;
 }
 
-.titolo {
-  position: fixed;
-  top: 0%;
-  left: 42%;
-}
-
-.titoloImg {
-  position: fixed;
-  width: 17%;
-  height: 12%;
-  top:2%;
-}
 
 .buttonClicked {
   position: relative;
@@ -111,24 +113,24 @@
   top: -10%;
 }
 
+
+
 @media screen and (min-width: 768px) {
   .leftSide,
   .rightSide {
     height: 100vh;
   }
 
+  .imgProp{
+    width:80% ;
+    height:60%;
+    border-radius: 2%;
+  }
+
   .lista {
     display: block !important;
     top: 33% !important; /*COSA CI DEVO METTERE?? NON STA AL CENTRO!*/
     left: 49.05% !important;
-  }
-
-  .titolo {
-    position: fixed;
-  }
-  .titoloImg {
-    width: 16%;
-    height: 16%;
   }
 
   .space {
@@ -139,6 +141,17 @@
     position: block !important;
     left: -12%;
   }
+
+  .rightParag {
+    position: relative;
+    width: 600px;
+    top: 30%;
+    left: 8%;
+    right: 5%;
+    overflow: hidden;
+    text-align: center;
+  }
+
 }
 
 
@@ -151,4 +164,5 @@
   height: 60vh;
   width: 200vh;
 }
+
 

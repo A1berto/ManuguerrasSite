@@ -31,7 +31,7 @@ function LeftRightSize(props) {
             "animated leftSide d-flex justify-content-center align-items-center "
           }
         >
-          <img src={props.image} alt= "relativeImage" />
+          <img src={props.image} className="imgProp" alt="relativeImage" />
         </div>
       </div>
 

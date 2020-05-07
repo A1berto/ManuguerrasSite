@@ -27,7 +27,7 @@ class App extends Component {
           buttonColor: "#b2d8ca",
           paragTitle: "Famiglia",
           paragPreview:
-            "quanti siamo. Dove viviamo. Cosa ci piace fare. curiosità",
+            "La famiglia è la patria del cuore. (Giuseppe Mazzini)",
         },
         {
           id: 1,
@@ -35,7 +35,7 @@ class App extends Component {
           buttonColor: "#fef6bb",
           paragTitle: " Nonni ",
           paragPreview:
-            " anteprima sui nonni. Quanti figli hanno. Cosa gli piace fare",
+            " Nessuno può fare per i bambini quel che fanno i nonni: essi spargono polvere di stelle sulla vita dei più piccoli. (Alex Haley)  ",
         },
         {
           id: 2,
@@ -59,7 +59,7 @@ class App extends Component {
           buttonColor: "#f8dbd1",
           paragTitle: "Proponi",
           paragPreview:
-            " Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.",
+            " Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. ",
         },
       ],
     };
@@ -131,7 +131,6 @@ class App extends Component {
           buttons={this.state.buttons}
           handleClick={(e) => this.btnClicked(e)}
         />
-
         <Logo />
       </div>
     );

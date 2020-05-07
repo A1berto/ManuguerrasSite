@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Slide } from "react-slideshow-image";
 import Filtro from "./Filtro";
 
-import "../Slide.css";
+import "../style/Slide.css";
 
 function AltaVisione(props) {
 
