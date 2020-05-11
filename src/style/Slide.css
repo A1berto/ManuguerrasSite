@@ -1,11 +1,11 @@
 .containerSlide{
     padding: 0 !important;
     margin: 0 !important;
-    width: 98%;
+    width: 85%;
     height: 100%;
     position: fixed;
-    left: 1%;
-    top: 0;   
+    left: 7.5%;
+    top: 10%;   
   }
   .containerSlide img{
     position: relative;

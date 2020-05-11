@@ -12,7 +12,7 @@ function AltaVisione(props) {
 
   const properties = {
     duration: 99999999999999999,
-    transitionDuration: 700,
+    transitionDuration: 800,
     infinite: true,
     indicators: true,
     arrows: true,

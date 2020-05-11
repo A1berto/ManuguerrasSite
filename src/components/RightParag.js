@@ -2,6 +2,18 @@ import React, { Component } from "react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+  },
+}));
+
 function useHover() {
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
@@ -23,6 +35,7 @@ function useHover() {
 
 export default function RightParag(props) {
   const [ref, hovered] = useHover();
+  const classes = useStyles();
 
   return (
     <div className="rightParag">
@@ -38,7 +51,23 @@ export default function RightParag(props) {
           {props.title}
         </h1>
       </Link>
+      <div></div>
       <p>{props.parag}</p>
     </div>
   );
 }
+
+/**
+ * <form className={classes.root} noValidate autoComplete="off">
+      <TextField
+          id="standard-read-only-input"
+          label=""
+          defaultValue={props.title}
+          InputProps={{
+            readOnly: true,
+          }}
+        />
+        </form>
+ * 
+ * 
+ */
