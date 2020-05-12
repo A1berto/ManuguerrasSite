@@ -45,7 +45,7 @@ export default function Filtro() {
             );
           }}
         />
-        <label for="tutto" style={{marginLeft:"0"}}>Tutto</label>
+        <label htmlFor="tutto" style={{marginLeft:"0"}}>Tutto</label>
 
         {optionState.map((d, i) => (
           <tr key={d.id}>

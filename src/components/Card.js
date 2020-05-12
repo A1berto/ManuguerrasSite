@@ -1,7 +1,7 @@
 import React from "react";
 import immagine from "../images/famiglia.jpg";
 
-export default function CardMia() {
+export default function Card() {
   return (
     
         <div className="col-md-3" style={{marginBottom:"4vh"}}>

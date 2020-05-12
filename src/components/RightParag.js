@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
-import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({

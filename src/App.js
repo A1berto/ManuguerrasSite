@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 import Scelta from "./components/Scelta";
 
@@ -26,8 +31,7 @@ class App extends Component {
           url: Famiglia, // basta che lo assegni cosi! questo path verrà cambiato in fase di build! "./images/idee.png";
           buttonColor: "#b2d8ca",
           paragTitle: "Famiglia",
-          paragPreview:
-            "La famiglia è la patria del cuore. (Giuseppe Mazzini)",
+          paragPreview: "La famiglia è la patria del cuore. (Giuseppe Mazzini)",
         },
         {
           id: 1,
@@ -39,7 +43,7 @@ class App extends Component {
         },
         {
           id: 2,
-          url:Eventi ,
+          url: Eventi,
           buttonColor: "#fcc182",
           paragTitle: "Eventi",
           paragPreview:
@@ -47,7 +51,7 @@ class App extends Component {
         },
         {
           id: 3,
-          url:  Vivande ,
+          url: Vivande,
           buttonColor: "#f15d73",
           paragTitle: "Pietanze",
           paragPreview:
@@ -55,7 +59,7 @@ class App extends Component {
         },
         {
           id: 4,
-          url:  Idee ,
+          url: Idee,
           buttonColor: "#f8dbd1",
           paragTitle: "Proponi",
           paragPreview:
@@ -146,13 +150,14 @@ class App extends Component {
               path="/approfondisci"
               component={() => (
                 <Scelta
+                  backColor={this.getCurrentBackgroundColor()}
                   currentId={this.state.currentId}
                   buttons={this.state.buttons}
                 />
               )}
             />
             {/*REDIRECT AUTOMATICO*/}
-            <Redirect to="/home"/>
+            <Redirect to="/home" />
           </Switch>
         </div>
       </Router>
