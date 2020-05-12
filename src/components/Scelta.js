@@ -5,11 +5,11 @@ import "../style/Logo.css";
 
 function Scelta(props) {
   return (
-    <div className="ss" style={{
-      backgroundColor: `${props.backColor}`}}>
+    <div className="ss">
       //mettere logo più alto
       <Logo />
       <AltaVisione
+      backColor={props.backColor}
         sections={props.buttons}
         currentId={props.currentId}
       />

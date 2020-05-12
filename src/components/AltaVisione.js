@@ -11,10 +11,12 @@ class AltaVisione extends Component {
     this.state = { ID: props.currentId };
   }
 
+  
   render() {
     let arr = this.props.sections;
     let modified = arr.splice(0, this.props.currentId);
     arr.push(...modified);
+
 
     const properties = {
       duration: 99999999999999999,
@@ -28,13 +30,26 @@ class AltaVisione extends Component {
         this.setState({ ID: newIndex });
       },
     };
-
     const handleFilters = (filters, category) => {
       console.log(filters);
       //TODO  query per modificare la richiesta della card
     };
+
+    const getCurrentBackgroundColor = () => {
+      const currentButton = this.props.sections.find((button) => {
+        return button.id === this.state.ID;
+      });
+      return currentButton === undefined
+        ? "#4f4f4f"
+        : currentButton.buttonColor;
+    };
+
     return (
-      <div>
+      <div
+        style={{
+          backgroundColor: getCurrentBackgroundColor(),
+        }}
+      >
         <div className="containerSlide justify-content-center">
           <Slide {...properties}>
             {arr.map((e) => (
@@ -50,11 +65,13 @@ class AltaVisione extends Component {
         {this.state.ID === 3 ? (
           <React.Fragment>
             <Filtro
-              handleFilters={(filters) => this.handleFilters(filters, "options")}
+              handleFilters={(filters) =>
+                this.handleFilters(filters, "options")
+              }
             />
             <Cards />
           </React.Fragment>
-        ) : (
+        ): (
           <div></div>
         )}
       </div>

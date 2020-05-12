@@ -228,3 +228,18 @@ body {
 .checkbox input[type="checkbox"]:focus + label::before {
   outline: 0;
 }
+
+.card:hover {
+  box-shadow: 3px 7px 15px 1px rgb(78, 77, 77) !important;
+}
+.card-img-top{
+  transform: scale(1);
+}
+
+.card-img-top:hover{
+  transform: scale(1.5);
+  transition: transform 0.7s ease;
+}
+.overflow{
+  overflow: hidden;
+}

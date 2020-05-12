@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../style/Checkbox.css";
+
+
+
+
 export default function Filtro() {
   const [optionState, setOptionState] = useState([]);
 
@@ -48,7 +52,7 @@ export default function Filtro() {
         <label htmlFor="tutto" style={{marginLeft:"0"}}>Tutto</label>
 
         {optionState.map((d, i) => (
-          <tr key={d.id}>
+          <tr key={i}>
             <th scope="row">
               <input
                 onChange={(event) => {
@@ -67,7 +71,7 @@ export default function Filtro() {
                 type="checkbox"
                 checked={d.select}
               />
-              <label for={d.id}>{d.name}</label>
+              <label htmlFor={d.id}>{d.name}</label>
             </th>
           </tr>
         ))}
