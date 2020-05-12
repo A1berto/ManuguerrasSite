@@ -2,10 +2,10 @@
     padding: 0 !important;
     margin: 0 !important;
     width: 85%;
-    height: 100%;
-    position: fixed;
+    height: 65%;
+    position: relative;
     left: 7.5%;
-    top: 10%;   
+    top: 6vh;   
   }
   .containerSlide img{
     position: relative;

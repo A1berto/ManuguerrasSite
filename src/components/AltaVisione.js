@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Slide } from "react-slideshow-image";
-import Filtro from "./Filtro";
 
 import "../style/Slide.css";
 
@@ -18,13 +17,9 @@ function AltaVisione(props) {
     arrows: true,
   };
 
-  const handleFilters = (filters, category) => {
-    console.log(filters);
-    //TODO  query per modificare la richiesta della card
-  };
 
   return (
-    <div className="containerSlide">
+    <div className="containerSlide justify-content-center">
       <Slide {...properties}>
         {arr.map((e) => (
           <div className="each-slide">
@@ -35,30 +30,10 @@ function AltaVisione(props) {
         ))}
       </Slide>
 
-      <Filtro handleFilters={(filters) => handleFilters(filters, "options")} />
-
     </div>
   );
 }
 
 export default AltaVisione;
 
-/*
 
-          <div className="each-slide">
-            <div>
-              <img src={Famiglia} alt="img2" />
-            </div>
-          </div>
-          <div className="each-slide">
-            <div>
-              <img src={Vivande} alt="img3" />
-            </div>
-          </div>
-          <div className="each-slide">
-            <div>
-              <img src={Nonni} alt="img4" />
-            </div>
-          </div>
-
-*/

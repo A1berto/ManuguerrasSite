@@ -1,3 +1,8 @@
+.ordinato{
+    position: relative;
+    top: 7vh;
+}
+
 
 .stile{
     width: 520px !important;
@@ -12,6 +17,7 @@
 .checkbox {
     width: 100%;
     position: relative;
+    top: 1vh !important;
     border: 10px aquamarine;
 }
 

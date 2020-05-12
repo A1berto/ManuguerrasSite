@@ -25,11 +25,11 @@ export default function Filtro() {
   }, []);
 
   return (
-    <div style={{ marginTop: "0.7%" }}>
+    <div className="ordinato justify-content-center">
       {" "}
       SOCCU VOE MANGIARE? 
       <div
-        className="checkbox stile d-flex justify-content-center"
+        className=" stile checkbox d-flex justify-content-center"
        >
         <input
           type="checkbox"
