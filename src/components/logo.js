@@ -4,13 +4,13 @@ import "../style/Logo.css";
 class Logo extends Component {
   render() {
     return (
-      <div>
+      
         <img
-          className="animated bounceInDown titoloImg"
+          className="animated bounceInDown dimImg"
           src={Titolo}
           alt="RelativeImageOrImages"
         ></img>
-      </div>
+      
     );
   }
 }

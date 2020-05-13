@@ -4,12 +4,15 @@ import Logo from "./logo";
 import "../style/Logo.css";
 
 function Scelta(props) {
+
+  
   return (
     <div className="ss">
-      //mettere logo più alto
-      <Logo />
+      <div className="titoloImgScelta">
+        <Logo />
+      </div>
       <AltaVisione
-      backColor={props.backColor}
+        backColor={props.backColor}
         sections={props.buttons}
         currentId={props.currentId}
       />

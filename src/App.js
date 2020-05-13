@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import "./style/Logo.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -59,7 +61,7 @@ class App extends Component {
         },
         {
           id: 4,
-          url: Idee,
+          url: {},
           buttonColor: "#f8dbd1",
           paragTitle: "Proponi",
           paragPreview:
@@ -135,7 +137,9 @@ class App extends Component {
           buttons={this.state.buttons}
           handleClick={(e) => this.btnClicked(e)}
         />
-        <Logo />
+        <div className="titoloImg">
+          <Logo />
+        </div>
       </div>
     );
   };

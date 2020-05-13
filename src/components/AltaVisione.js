@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Slide } from "react-slideshow-image";
 import Cards from "./Cards";
 import Filtro from "./Filtro";
+import Idee from "./Idee";
 
 import "../style/Slide.css";
 
@@ -45,9 +46,9 @@ class AltaVisione extends Component {
     };
 
     return (
-      <div
+      <div className="ss" 
         style={{
-          backgroundColor: getCurrentBackgroundColor(),
+          backgroundColor: getCurrentBackgroundColor()
         }}
       >
         <div className="containerSlide justify-content-center">
@@ -55,13 +56,13 @@ class AltaVisione extends Component {
             {arr.map((e) => (
               <div className="each-slide" key={e.id}>
                 <div>
-                  <img src={e.url} alt="img1" />
+                  <img src={e.url} alt="" />
                 </div>
               </div>
             ))}
           </Slide>
         </div>
-        //sistemare un metodo che va utilizzato per tutti
+        {"//sistemare un metodo che va utilizzato per tutti"}
         {this.state.ID === 3 ? (
           <React.Fragment>
             <Filtro
@@ -71,9 +72,9 @@ class AltaVisione extends Component {
             />
             <Cards />
           </React.Fragment>
-        ): (
-          <div></div>
-        )}
+        ): this.state.ID === 4 ?(
+          <Idee/>
+        ): <div></div>}
       </div>
     );
   }

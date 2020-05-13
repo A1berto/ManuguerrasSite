@@ -143,10 +143,6 @@
   }
 }
 
-.ss {
-  z-index: 0;
-}
-
 .imma {
   height: 60vh;
   width: 200vh;
@@ -243,3 +239,23 @@ body {
 .overflow{
   overflow: hidden;
 }
+
+.dimension{
+  position: relative;
+  width: 70%;
+  top: 2vh;
+  left: 15%;
+}
+.avanti{
+  position: absolute;
+  top:2%;
+  left:22.5%;
+}
+
+html, 
+body ,
+#root,
+.ss{
+    height: 100%;
+}
+
