@@ -9,8 +9,7 @@ function usePrevious(value) {
   return ref.current;
 }
 
-// TODO se non serve lo stato usa i componenti sensa stato FunctionComponent, non è una classe non c'è il this !!!
-// esempio di seguito LeftRightSize
+
 function LeftRightSize(props) {
   // TODO usare lo stesso componente per right e left! non duplicare codice
 

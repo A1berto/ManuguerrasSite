@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-import { Modal, Button, Row, Col, Form } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 
-export default class MyModal extends Component {
-  constructor(props) {
-    super(props);
-  }
+export default function MyModal(props) {
+  
 
-  render() {
     return (
       <Modal
-        {...this.props}
+        {...props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -87,9 +84,8 @@ export default class MyModal extends Component {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={this.props.onHide}>Close</Button>
+          <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
     );
   }
-}

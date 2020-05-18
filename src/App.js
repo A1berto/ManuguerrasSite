@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./style/Logo.css";
 import {
   BrowserRouter as Router,
@@ -20,7 +19,6 @@ import Famiglia from "./images/famiglia.jpg";
 import Nonni from "./images/nonni.jpg";
 import Eventi from "./images/eventi.png";
 import Vivande from "./images/pietanze.jpg";
-import Idee from "./images/idee.png";
 
 class App extends Component {
   constructor(props) {
@@ -54,7 +52,7 @@ class App extends Component {
         {
           id: 3,
           url: Vivande,
-          buttonColor: "#f15d73",
+          buttonColor: "#f37487",
           paragTitle: "Pietanze",
           paragPreview:
             " Alla famiglia Manuguerra piace cucinare diverse pietanze. Diversi sono i cuochi. Elencare pietanze principali",
@@ -153,7 +151,7 @@ class App extends Component {
             <Route
               path="/approfondisci"
               component={() => (
-                <Scelta
+                <Scelta 
                   backColor={this.getCurrentBackgroundColor()}
                   currentId={this.state.currentId}
                   buttons={this.state.buttons}

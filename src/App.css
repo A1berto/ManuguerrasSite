@@ -228,34 +228,47 @@ body {
 .card:hover {
   box-shadow: 3px 7px 15px 1px rgb(78, 77, 77) !important;
 }
-.card-img-top{
+.card-img-top {
   transform: scale(1);
 }
 
-.card-img-top:hover{
+.card-img-top:hover {
   transform: scale(1.5);
   transition: transform 0.7s ease;
 }
-.overflow{
+.overflow {
   overflow: hidden;
 }
 
-.dimension{
+.dimension {
   position: relative;
   width: 70%;
   top: 2vh;
   left: 15%;
 }
-.avanti{
+.avanti {
   position: absolute;
-  top:2%;
-  left:22.5%;
+  top: 2%;
+  left: 22.5%;
 }
 
-html, 
-body ,
+html,
+body,
 #root,
-.ss{
-    height: 100%;
+.ss {
+  height:  max-content;
 }
 
+
+.testoImmagine {
+  margin-left: 1%;
+  margin-bottom: 1%;
+  float: right;
+  clear: right;
+}
+.testoImmagine2 {
+  margin-right: 1%;
+  margin-bottom: 1%;
+  float: left;
+  clear: left;
+}

@@ -6,15 +6,14 @@ export default function Card(props) {
     <div className="col-md-3" style={{ marginBottom: "4vh" }}>
       <div className="card text-center">
         <div className="card-body text-dark" style={{paddingTop:"0", paddingBottom:"0"}}>
-          <h4 className="card-title">Lasagna</h4>
+          <h4 className="card-title">{props.title}</h4>
         </div>
         <div className="overflow">
           <img src={immagine} className="card-img-top" alt="" />
         </div>
         <div className="card-body text-dark">
           <p className="card-text text-secondary">
-            Il testo che mi passo come descrizione della card e
-            pepperepeppeppero
+            {props.ingredienti}
           </p>
           <a
             href="#Curiusu"

@@ -1,16 +1,8 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
-  },
-}));
+
 
 function useHover() {
   const ref = useRef();
@@ -33,17 +25,26 @@ function useHover() {
 
 export default function RightParag(props) {
   const [ref, hovered] = useHover();
-  const classes = useStyles();
 
+  const [background, setBackground] = useState("#fffff");
+  const [font, setFont]= useState("#424246");
+
+  
+  const setStyle= (background,font)=>{
+    setBackground(background);
+    setFont(font);
+  }
   return (
     <div className="rightParag">
       <Link
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none", backgroundColor:{background}}}
         to="/Approfondisci"
         sections={props.buttons}
         currentId={props.currentId}
+        onMouseEnter={()=> setStyle("#424246","#fdfdfd")}
+        onMouseOut={()=> setStyle("#fdfdfd","#424246")}
+         
       >
-        {hovered && <h6>Clicca qui per sapere di più</h6>}
 
         <h1 className="titoloPar" ref={ref}>
           {props.title}

@@ -7,7 +7,7 @@ function Scelta(props) {
 
   
   return (
-    <div className="ss">
+    <div className="ss ">
       <div className="titoloImgScelta">
         <Logo />
       </div>

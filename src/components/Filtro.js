@@ -4,20 +4,12 @@ import "../style/Checkbox.css";
 
 
 
-export default function Filtro() {
+export default function Filtro(props) {
   const [optionState, setOptionState] = useState([]);
 
   useEffect(() => {
-    let optionState = [
-      { id: 0, name: "Antipasto", clicked: false },
-      { id: 1, name: "Primo", clicked: false },
-      { id: 2, name: "Secondo", clicked: false },
-      { id: 3, name: "Contorno", clicked: false },
-      { id: 4, name: "Dolce", clicked: false },
-    ];
-
     setOptionState(
-      optionState.map((d) => {
+      props.optionState.map((d) => {
         return {
           select: d.clicked,
           id: d.id,
@@ -41,7 +33,7 @@ export default function Filtro() {
           onChange={(e) => {
             let checked = e.target.checked;
             setOptionState(
-              optionState.map((d) => {
+              props.optionState.map((d) => {
                 d.select = checked;
                 d.clicked = checked;
                 return d;
@@ -58,7 +50,7 @@ export default function Filtro() {
                 onChange={(event) => {
                   let checked = event.target.checked;
                   setOptionState(
-                    optionState.map((data) => {
+                    props.optionState.map((data) => {
                       if (d.id === data.id) {
                         d.select = checked;
                         data.clicked = checked;
@@ -71,6 +63,7 @@ export default function Filtro() {
                 type="checkbox"
                 checked={d.select}
               />
+              
               <label htmlFor={d.id}>{d.name}</label>
             </th>
           </tr>
